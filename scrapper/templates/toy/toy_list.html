@@ -1,0 +1,26 @@
+<h1>Toys</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Pages</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for toy in object_list %}
+    <tr>
+    <td>{{ toy.name }}</td>
+    <td>{{ toy.start_age }}</td>
+    <td><a href="{% url "toy_view" toy.id %}">view</a></td>
+    <td><a href="{% url "toy_edit" toy.id %}">edit</a></td>
+    <td><a href="{% url "toy_delete" toy.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "toy_new" %}">New</a>

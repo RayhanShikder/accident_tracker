@@ -1,7 +1,11 @@
 from django.urls import path
 
-from . import views
+from scrapper import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.toy_list, name='toy_list'),
+    path('view/<int:pk>', views.toy_view, name='toy_view'),
+    path('new', views.toy_create, name='toy_new'),
+    path('edit/<int:pk>', views.toy_update, name='toy_edit'),
+    path('delete/<int:pk>', views.toy_delete, name='toy_delete'),
 ]
